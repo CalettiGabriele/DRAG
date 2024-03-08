@@ -1,0 +1,101 @@
+ID,Indirizzo,Numero camere da letto,Numero bagni,Superficie (m²),GiardiFalse (m²),Parcheggio,Prezzo (EUR),Vista mare,Piscina,Garage
+1,Via Roma 1,3,2,150,100,True,500000,True,True,True
+2,Via dei Pescatori 5,2,1,90,50,False,350000,False,False,False
+3,Vicolo delle Rose 12,4,3,220,150,True,800000,True,False,True
+4,Piazza Martiri 3,1,1,60,0,False,250000,False,False,False
+5,Via Garibaldi 8,5,4,300,200,True,1200000,True,True,True
+6,Via Porto 15,3,2,120,80,True,450000,False,False,True
+7,Salita dei Cipressi 6,2,1,80,0,False,300000,True,False,False
+8,Viale Andrea Doria 22,4,3,200,100,True,700000,True,False,True
+9,Vicolo San Giorgio 9,3,2,140,50,False,400000,False,False,False
+10,Via del Castello 14,6,4,350,300,True,1500000,True,True,True
+11,Vicolo delle Viole 3,2,1,70,0,False,280000,False,False,False
+12,Via San MartiFalse 7,3,2,130,70,True,480000,True,True,True
+13,Piazza della Libertà 10,4,3,180,120,True,600000,True,True,True
+14,Via delle Palme 18,1,1,50,0,False,220000,False,False,False
+15,Vicolo dei Limoni 6,2,1,85,0,False,320000,True,False,False
+16,Via Montallegro 25,5,3,260,150,True,900000,True,True,True
+17,Viale Castello Brown 2,3,2,140,80,False,480000,False,False,True
+18,Salita San Giorgio 14,2,1,75,0,False,280000,False,False,False
+19,Via Paraggi 20,4,3,200,100,True,700000,True,True,True
+20,Vicolo delle Ginestre 8,3,2,110,50,False,380000,False,False,False
+21,Viale Regina Elena 30,6,4,380,250,True,1600000,True,True,True
+22,Via Fratelli Cervi 11,2,1,65,0,False,260000,False,False,False
+23,Viale San Michele 17,3,2,120,80,True,450000,False,False,True
+24,Vicolo dei Ciliegi 5,4,3,180,100,True,620000,True,False,True
+25,Piazza Martiri della Libertà 8,1,1,55,0,False,240000,False,False,False
+26,Via Porto Vecchio 4,2,1,75,0,False,270000,False,False,False
+27,Salita San Lorenzo 12,3,2,140,90,False,500000,True,True,True
+28,Vicolo dei Gelsomini 6,2,1,80,0,False,310000,False,False,False
+29,Viale Miramare 24,5,3,250,150,True,950000,True,True,True
+30,Vicolo della Marina 10,3,2,130,70,False,480000,True,False,True
+31,Via Belvedere 15,4,3,190,120,True,680000,True,True,True
+32,Viale Vittorio Veneto 3,1,1,60,0,False,250000,False,False,False
+33,Via San SebastiaFalse 9,2,1,70,0,False,290000,False,False,False
+34,Vicolo dei Coralli 8,3,2,110,50,False,380000,True,False,False
+35,Viale Italia 22,6,4,400,300,True,1700000,True,True,True
+36,Via San Michele 14,2,1,70,0,False,280000,False,False,False
+37,Vicolo delle Mimose 3,3,2,130,80,True,470000,True,False,True
+38,Via Parodi 7,4,3,170,100,True,600000,True,True,True
+39,Piazza Castello 10,1,1,45,0,False,210000,False,False,False
+40,Vicolo dei Coralli 4,2,1,75,0,False,270000,False,False,False
+41,Viale Miramare 20,5,3,240,150,True,920000,True,True,True
+42,Vicolo della Marina 8,3,2,120,70,False,460000,False,True,True
+43,Via Belvedere 12,4,3,200,130,True,720000,True,True,True
+44,Viale Vittorio Veneto 5,1,1,55,0,False,240000,False,False,False
+45,Via San SebastiaFalse 11,2,1,75,0,False,280000,False,False,False
+46,Vicolo dei Coralli 10,3,2,120,60,False,400000,False,True,False
+47,Viale Italia 20,6,4,380,250,True,1650000,True,True,True
+48,Via San Michele 12,2,1,75,0,False,290000,False,False,False
+49,Vicolo delle Mimose 5,3,2,140,90,True,490000,True,False,True
+50,Via Parodi 9,4,3,180,100,True,650000,True,True,True
+51,Via Belvedere 18,3,2,130,70,True,470000,False,False,True
+52,Viale Vittorio Veneto 7,4,3,180,100,True,650000,True,True,True
+53,Via San SebastiaFalse 13,1,1,55,0,False,240000,False,False,False
+54,Vicolo dei Coralli 12,2,1,75,0,False,280000,False,False,False
+55,Viale Italia 18,5,3,240,150,True,920000,True,True,True
+56,Via San Michele 10,3,2,120,80,False,460000,True,False,True
+57,Vicolo delle Mimose 7,4,3,170,100,True,600000,True,True,True
+58,Piazza Castello 12,1,1,50,0,False,230000,False,False,False
+59,Vicolo dei Coralli 6,2,1,70,0,False,270000,False,False,False
+60,Viale Miramare 16,5,3,250,150,True,950000,True,True,True
+61,Vicolo della Marina 6,3,2,120,70,False,450000,True,True,True
+62,Via Belvedere 20,4,3,190,120,True,680000,True,True,True
+63,Viale Vittorio Veneto 9,2,1,65,0,False,260000,False,False,False
+64,Via San SebastiaFalse 15,3,2,140,90,False,500000,True,True,True
+65,Vicolo dei Coralli 14,4,3,180,80,False,600000,True,True,False
+66,Viale Italia 16,6,4,400,300,True,1700000,True,True,True
+67,Via San Michele 8,2,1,70,0,False,290000,False,False,False
+68,Vicolo delle Mimose 9,3,2,130,80,True,480000,False,True,True
+69,Piazza Castello 14,1,1,45,0,False,210000,False,False,False
+70,Vicolo dei Coralli 8,2,1,75,0,False,280000,False,False,False
+71,Viale Miramare 12,5,3,240,150,True,920000,True,True,True
+72,Vicolo della Marina 4,3,2,120,70,False,450000,True,True,True
+73,Via Belvedere 22,4,3,200,130,True,720000,True,True,True
+74,Viale Vittorio Veneto 11,1,1,55,0,False,240000,False,False,False
+75,Via San SebastiaFalse 17,2,1,75,0,False,280000,False,False,False
+76,Vicolo dei Coralli 16,3,2,120,60,False,400000,True,True,False
+77,Viale Italia 14,6,4,380,250,True,1650000,True,True,True
+78,Via San Michele 6,2,1,75,0,False,290000,False,False,False
+79,Vicolo delle Mimose 11,3,2,140,90,True,490000,True,False,True
+80,Via Parodi 11,4,3,180,100,True,650000,True,True,True
+81,Via Roma 2,3,2,150,100,True,500000,True,True,True
+82,Via dei Pescatori 6,2,1,90,50,False,350000,False,False,False
+83,Vicolo delle Rose 14,4,3,220,150,True,800000,True,False,True
+84,Piazza Martiri 5,1,1,60,0,False,250000,False,False,False
+85,Via Garibaldi 10,5,4,300,200,True,1200000,True,True,True
+86,Via Porto 20,3,2,120,80,True,450000,False,False,True
+87,Salita dei Cipressi 8,2,1,80,0,False,300000,True,False,False
+88,Viale Andrea Doria 24,4,3,200,100,True,700000,True,False,True
+89,Vicolo San Giorgio 11,3,2,140,50,False,400000,False,False,False
+90,Via del Castello 16,6,4,350,300,True,1500000,True,True,True
+91,Vicolo delle Viole 5,2,1,70,0,False,280000,False,False,False
+92,Via San MartiFalse 10,3,2,130,70,True,480000,True,True,True
+93,Piazza della Libertà 12,4,3,180,120,True,600000,True,True,True
+94,Via delle Palme 20,1,1,50,0,False,220000,False,False,False
+95,Vicolo dei Limoni 8,2,1,85,0,False,320000,True,False,False
+96,Via Montallegro 30,5,3,260,150,True,900000,True,True,True
+97,Viale Castello Brown 4,3,2,140,80,False,480000,False,False,True
+98,Salita San Giorgio 16,2,1,75,0,False,280000,False,False,False
+99,Via Paraggi 22,4,3,200,100,True,700000,True,True,True
+100,Vicolo delle Ginestre 10,3,2,110,50,False,380000,False,False,False
