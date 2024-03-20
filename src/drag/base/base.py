@@ -120,9 +120,9 @@ Return only the improved sentence, it is very important that you do not return a
         with open(f"../src/drag/flows/{flow}.json", 'r') as f:
             flow_steps = json.load(f)
         steps_to_do = {} 
-        for idx, key in enumerate(flow_steps):
+        for idx, key in enumerate(flow_steps['flow']):
             if str(idx) not in mods and key not in mods:
-                steps_to_do[key] = flow_steps[key]
+                steps_to_do[key] = flow_steps['flow'][key]
         cells = []
         llm_response = context
         print(steps_to_do)
@@ -136,7 +136,8 @@ Return only the improved sentence, it is very important that you do not return a
     def flow_steps(self, flow: str):
         with open(f"../src/drag/flows/{flow}.json", 'r') as f:
             flow_steps = json.load(f)
-        for idx, key in enumerate(flow_steps):
+        print(f"{flow}\n{flow_steps['infos']['Description']}")
+        for idx, key in enumerate(flow_steps['flow']):
             print(f"\n{idx} - {key}")
-            for  k, v in flow_steps[key].items():
+            for  k, v in flow_steps['flow'][key].items():
                 print(f"    {k}: {v}")
