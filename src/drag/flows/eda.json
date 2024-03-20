@@ -1,0 +1,15 @@
+{
+    "infos":{
+        "Description": ""
+    },
+    "flow": {
+        "NaN values": {
+            "Description": "",
+            "Question": "Write Python code to handle missing values in a dataset."
+        },
+        "Duplicates": {
+            "Description": "",
+            "Question": "Generate Python code to identify and remove duplicate rows in a dataset."
+        }
+    }
+}

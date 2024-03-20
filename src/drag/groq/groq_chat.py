@@ -26,14 +26,9 @@ class Groq_Chat(Drag):
             raise Exception("Prompt is empty")
         
         chat_completion = self.client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": prompt,
-            }
-        ],
-        model=self.model,
-        temperature=0.,
+            messages=prompt,
+            model=self.model,
+            temperature=0.,
         )
         llm_response = self.clear_llm_response(llm_response=chat_completion.choices[0].message.content)
         return llm_response

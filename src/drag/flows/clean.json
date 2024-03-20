@@ -1,0 +1,31 @@
+{
+    "infos":{
+        "Description": "Standard procedure for cleaning and standardising a dataset, to be performed prior to data analysis."
+    },
+    "flow": {
+        "NaN values": {
+            "Description": "Handle missing values in the dataset.",
+            "Question": "Write Python code to handle missing values in a dataset."
+        },
+        "Duplicates": {
+            "Description": "Identify and remove duplicate rows from the dataset.",
+            "Question": "Generate Python code to identify and remove duplicate rows in a dataset."
+        },
+        "Standardisation": {
+            "Description": "Standardize the features by scaling them to have a mean of 0 and a standard deviation of 1.",
+            "Question": "Create Python code to standardize features by scaling them to have a mean of 0 and a standard deviation of 1."
+        },
+        "Unrelevant columns": {
+            "Description": "Remove columns that are not relevant for the analysis or model training.",
+            "Question": "Generate Python code to remove irrelevant columns from a dataset."
+        },
+        "Rename columns": {
+            "Description": "Rename columns to make them more descriptive or consistent.",
+            "Question": "Write Python code to rename columns in a dataset to make them more descriptive or consistent."
+        },
+        "Remove outliers": {
+            "Description": "Identify and remove outliers from the dataset.",
+            "Question": "Create Python code to identify and remove outliers from a dataset."
+        }
+    }
+}
