@@ -51,26 +51,35 @@ class Drag(ABC):
     def get_prompt( self, data: dict, question: str, context=None, **kwargs,):
             data_keys = [k for k in data.keys()]
             data_values = [v for v in data.values()]
-            initial_prompt = f"The user poses a query and you provide the python code. \
-You answer only with python code and not with explanations. \
-You do not respond with explanations, but only with code.\n\
+            initial_prompt = f"You are an expert data scientist who helps do data analysis and write python code according to the user's request. \
+It is very important that you only answer with python code and not with explanations.\n\
 The code you generate will be inserted inside a Python notebook, \
-in which a Pandas DataFrame called {', '.join(data_keys)} has already been declared.\n\n\
-Consider the following DataFrame {', '.join(data_keys)}:\n"
-            initial_prompt = self.add_df_to_prompt(initial_prompt=initial_prompt, data=data_values)
+in which a Pandas DataFrame called {', '.join(data_keys)} has already been declared."
+            data_prompt = f"Consider the following DataFrame {', '.join(data_keys)}:\n"
+            data_prompt = self.add_df_to_prompt(initial_prompt=initial_prompt, data=data_values)
+            context_prompt = ""
             if context is not None and context != "":
-                initial_prompt += f"\nAlso consider that the following code is present in a previous notebook code cell, \
-use this code as the basis for what you need to generate but it is very important that it is not rewritten in your output.\n\n{context}"
+                context_prompt = f"Consider this python code already in the notebook, use it as a basis for generating other code but it is very important not to return it as output. \
+It is important to avoid duplicate code.\n'''python\n{context}\n'''"
             prompt = [
                 {
                     "role": "system",
                     "content": initial_prompt
                 },
                 {
+                    "role": "system",
+                    "content": data_prompt
+                },
+                {
+                    "role": "system",
+                    "content": context_prompt
+                },
+                {
                     "role": "user",
-                    "content": f"Generates python code that enables:\n{question}"
+                    "content": f"Only generate python code that allows: {question}"
                 }
             ]
+            print(f"\n\nSYSTEM:\n{initial_prompt}\n\nUSER:\nGenerates python code that enables:\n{question}")
             return prompt
 
     def add_df_to_prompt(self, initial_prompt: str, data) -> str:

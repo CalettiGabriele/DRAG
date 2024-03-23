@@ -19,7 +19,7 @@ class Groq_Chat(Drag):
         else:
             self.model = "mixtral-8x7b-32768"
 
-    def submit_prompt(self, prompt, temperature=0, **kwargs) -> str:
+    def submit_prompt(self, prompt, temperature=0.4, **kwargs) -> str:
         if prompt is None:
             raise Exception("Prompt is None")
         if len(prompt) == 0:
@@ -28,7 +28,7 @@ class Groq_Chat(Drag):
         chat_completion = self.client.chat.completions.create(
             messages=prompt,
             model=self.model,
-            temperature=0.,
+            temperature=temperature,
         )
         llm_response = self.clear_llm_response(llm_response=chat_completion.choices[0].message.content)
         return llm_response
