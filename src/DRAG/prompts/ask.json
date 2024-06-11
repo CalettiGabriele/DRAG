@@ -1,0 +1,34 @@
+{
+    "prompt": [{
+        "role":"system",
+        "content":"The user provides you with 3 elements: DataFrame, Notebook, Question.\n- DataFrame explains the structure of a dataset.\n- Notebook contains code already written and available to be used\n- Question is a natural language question\nYour task is to write the necessary python code step by step to satisfy the question from the DataFrame. If possible, use the code already written in Memory as a starting point.\nIt is very important to return only the code, so do not add any unnecessary sentences before or after it."
+    },
+    {
+        "role":"user",
+        "content":"DataFrame:'''\nRangeIndex: 100 entries, 0 to 99\nData columns (total 11 columns):\n#   Column                  Non-Null Count  Dtype\n---  ------                  --------------  -----\n0   ID                      100 non-null    int64\n1   Indirizzo               100 non-null    object\n2   Numero camere da letto  100 non-null    int64\n3   Numero bagni            100 non-null    int64\n4   Superficie (m²)         100 non-null    int64\n5   GiardiFalse (m²)        100 non-null    int64\n6   Parcheggio              100 non-null    bool\n7   Prezzo (EUR)            100 non-null    int64\n8   Vista mare              100 non-null    bool\n9   Piscina                 100 non-null    bool\n10  Garage                  100 non-null    bool\ndtypes: bool(4), int64(6), object(1)\nmemory usage: 6.0+ KB\n'''\nMemory:'''\nimport numpy as np\nimport pandas as pd\n\ndf = pd.read_csv('portofino.csv')\n'''\nQuestion:'''\nHow many houses have a pool and a sea view?\n'''"
+    },
+    {
+        "role":"assistant",
+        "content":"houses_with_pool_and_sea_view = df[(df['Piscina'] == True) & (df['Vista mare'] == True)].shape[0]\nprint(houses_with_pool_and_sea_view)"
+    },
+    {
+        "role":"user",
+        "content":"DataFrame:'''\nRangeIndex: 54035 entries, 0 to 54034\nData columns (total 9 columns):\n#   Column           Non-Null Count  Dtype\n---  ------           --------------  -----\n0   cap-diameter     54035 non-null  int64\n1   cap-shape        54035 non-null  int64\n2   gill-attachment  54035 non-null  int64\n3   gill-color       54035 non-null  int64\n4   stem-height      54035 non-null  float64\n5   stem-width       54035 non-null  int64\n6   stem-color       54035 non-null  int64\n7   season           54035 non-null  float64\n8   class            54035 non-null  int64\ndtypes: float64(2), int64(7)\nmemory usage: 3.7 MB\n'''\nMemory:'''\nimport numpy as np\nimport pandas as pd\n\ndf = pd.read_csv('mushroom_cleaned.csv')\n\n\nfrom scipy import stats\n\n# Calculate the Z-score for each column in the dataframe\nz_scores = np.abs(stats.zscore(df))\n\n# Create a mask to select rows with Z-score less than or equal to 3 for all columns\nmask = (z_scores <= 3).all(axis=1)\n\n# Create a new dataframe with only the rows that have a Z-score less than or equal to 3 for all columns\ncleaned_df = df[mask]\n'''\nQuestion:'''\nWrite code to implement a KNN to classify new mushrooms\n'''"
+    },
+    {
+        "role":"assistant",
+        "content":"from sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.model_selection import train_test_split\n\n# Split the data into training and testing sets\nX = cleaned_df.drop('class', axis=1)\ny = cleaned_df['class']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Create a KNN classifier with k=5\nknn = KNeighborsClassifier(n_neighbors=5)\n\n# Train the model\nknn.fit(X_train, y_train)\n\n# Make predictions on the test set\ny_pred = knn.predict(X_test)\n\n# Evaluate the model\nprint('Accuracy:', knn.score(X_test, y_test))"
+    },
+    {
+        "role":"user",
+        "content":"DataFrame:'''\nRangeIndex: 160912 entries, 0 to 160911\nData columns (total 14 columns):\n#   Column            Non-Null Count   Dtype\n---  ------            --------------   -----\n0   Serial Number     160912 non-null  int64\n1   List Year         160912 non-null  int64\n2   Date Recorded     160912 non-null  object\n3   Town              160912 non-null  object\n4   Address           160907 non-null  object\n5   Assessed Value    160912 non-null  float64\n6   Sale Amount       160912 non-null  float64\n7   Sales Ratio       160912 non-null  float64\n8   Property Type     123913 non-null  object\n9   Residential Type  112475 non-null  object\n10  Non Use Code      36278 non-null   object\n11  Assessor Remarks  25993 non-null   object\n12  OPM remarks       3619 non-null    object\n13  Location          92960 non-null   object\ndtypes: float64(3), int64(2), object(9)\nmemory usage: 17.2+ MB\n'''\nMemory:'''\nimport numpy as np\nimport pandas as pd\n\ndf = pd.read_csv('/content/Real_Estate_Sales_2001-2021_GL.csv')\n\n\nhouses_in_a_cities = df[df['Town'].str.startswith('A')]\n'''\nQuestion:'''\nMake a graph of a map showing the average house purchase price for each city.\n'''"
+    },
+    {
+        "role":"assistant",
+        "content":"import matplotlib.pyplot as plt\nimport folium\n\n# Group the data by town and calculate the average sale amount\naverage_sale_amount_by_town = df.groupby('Town')['Sale Amount'].mean().reset_index()\n\n# Create a map\nm = folium.Map(location=[40.7128, -74.0060], zoom_start=4)\n\n# Add markers to the map for each town\nfor index, row in average_sale_amount_by_town.iterrows():\n    folium.Marker([row['Town'], row['Sale Amount']], popup=f\"Average sale amount in {row['Town']}: {row['Sale Amount']}\".replace('nan', '')).add_to(m)\n\n# Save the map as an HTML file\nm.save('map.html')\n\n# Create a bar chart of the average house purchase price for each city\nplt.figure(figsize=(10, 6))\nplt.bar(average_sale_amount_by_town['Town'], average_sale_amount_by_town['Sale Amount'])\nplt.xlabel('City')\nplt.ylabel('Average House Purchase Price')\nplt.title('Average House Purchase Price by City')\nplt.show()"
+    },
+    {
+        "role":"user",
+        "content":"DataFrame:'''\n%s\n'''\nNotebook:'''\n%s\n'''\nQuestion:'''\n%s\n'''"
+    }]
+}

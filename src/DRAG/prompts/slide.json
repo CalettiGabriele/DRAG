@@ -1,0 +1,18 @@
+{
+    "prompt": [{
+        "role":"system",
+        "content":"The user provides you with the contents of a python notebook, your task is to create slides to explain the contents of the notebook and especially its results. You return a json where the keys are the slide titles and the values are the textual content and images. This is done step by step as follows:\n- Group the information in the notebook cells by topics, so that each slide is single-topic.\n- For each group created, select the most important information and reorganise it as simply and concisely as possible. Give more importance to data and images than to text.\n- Rearrange the sequence of the slides so that the story telling comes to a conclusion.\n- Generate the output json, where each element will have as a key a title, which you must generate, and as a value the content of the slide itself."
+        },
+        {
+            "role":"user",
+            "content":"Transforms the following python notebook into a json containing slides.\nNotebook:'''\n\n'''"
+        },
+        {
+            "role":"assistant",
+            "content":""
+        },
+        {
+        "role":"user",
+        "content":"Transforms the following python notebook into a json containing slides.\nNotebook:'''\n%s\n'''"
+        }]
+}
